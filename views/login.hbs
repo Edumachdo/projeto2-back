@@ -1,0 +1,29 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    {{#if error}}
+      <p class="error">{{error}}</p>
+    {{/if}}
+    <div class="corpo-login">
+      <form action="/login" method="post">
+        <h1>Login</h1>
+        <label>Usuário:</label>
+        <input type="text" name="usuario" required /><br />
+        <label>Senha:</label>
+        <input type="password" name="senha" required /><br />
+        <div>
+          <input type="submit" value="Entrar" />
+          <button
+            class="botao"
+            onclick="window.location.href='/cadastro'"
+          >Cadastrar Usuário</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,267 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6fb1fc, #4364f7);
+  justify-items: center;
+  color: #fff;
+}
+
+.textarea-mensagem {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1rem;
+  resize: none;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.form-delete {
+  padding: 0;
+  box-shadow: none;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-mensagem {
+  width: 40vw;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1rem;
+}
+
+input[type="submit"] {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #2563eb;
+}
+
+.error {
+  color: #f87171;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.topbar {
+  max-width: 100vw;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 0;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.topbar > h2 {
+  margin: 0;
+  margin-left: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.topbar button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-right: 20px;
+}
+
+.topbar button:hover {
+  background-color: #2563eb;
+}
+
+.corpo {
+  height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.corpo-login {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.corpo-mensagem {
+  min-width: 90vw;
+  max-width: 95vw;
+  margin-bottom: 1rem;
+}
+
+.corpo-mensagem > button {
+  float: inline-end;
+}
+
+.botao {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  height: 40px;
+}
+.botao:hover {
+  background-color: #2563eb;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.message-table {
+  width: 95%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  color: #000;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.message-table th {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.message-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.message-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.message-table tr:hover {
+  background-color: #e1f0ff;
+}
+
+.botao-lixeira {
+  background-color: transparent;
+  border: none;
+  color: #f87171;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.botao-lixeira:hover {
+  color: #b91c1c;
+  filter: brightness(0.7);
+}
+
+.botao-editar {
+  background-color: transparent;
+  border: none;
+  color: #22c55e;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.botao-editar:hover {
+  color: #15803d;
+  filter: brightness(0.7);
+}
+
+.botao-direita {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.botao-curtida {
+  background-color: transparent;
+  border: none;
+  color: #3b82f6;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.botao-curtida svg {
+  stroke: #3b82f6;
+  fill: transparent;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+  width: 20px;
+  height: 20px;
+}
+
+.botao-curtida:hover svg {
+  stroke: #1e40af;
+}
+
+.botao-curtida.curtido svg {
+  fill: #3b82f6;
+  stroke: #3b82f6;
+}

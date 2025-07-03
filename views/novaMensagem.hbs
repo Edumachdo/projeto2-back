@@ -1,0 +1,24 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mensagem</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <h2>Mensagem</h2>
+      <button onclick="window.location.href='/logout'">Sair</button>
+    </div>
+    <div class="corpo">
+<form class="form-mensagem" action="{{#if message}}/mensagens/editar/{{message._id}}{{else}}/mensagens{{/if}}" method="post" accept-charset="utf-8">
+  <label for="mensagem">Mensagem: </label>
+  <textarea class="textarea-mensagem" name="mensagem" rows="4">{{#if message}}{{message.text}}{{/if}}</textarea>
+  <div class="form-buttons">
+    <input class="botao" type="submit" name="enviar" value="{{#if message}}Atualizar{{else}}Enviar{{/if}}" />
+    <button class="botao" type="button" onclick="window.location.href='/mensagens'">Voltar</button>
+  </div>
+</form>
+    </div>
+  </body>
+</html>

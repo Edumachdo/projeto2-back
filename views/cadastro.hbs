@@ -1,0 +1,25 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    {{#if error}}
+      <p class="error">{{error}}</p>
+    {{/if}}
+    <div class="corpo-login">
+      <form action="/cadastro" method="post">
+        <h1>Cadastro de Usuário</h1>
+        <label>Usuário:</label>
+        <input type="text" name="usuario" required /><br /><br />
+        <label>Email:</label>
+        <input type="email" name="email" required /><br /><br />
+        <label>Senha:</label>
+        <input type="password" name="senha" required /><br /><br />
+        <input type="submit" value="Cadastrar" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mensagens</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <h2>Bem-vindo, {{capitalize user.user}}</h2>
+      <button onclick="window.location.href='/logout'">Sair</button>
+    </div>
+    <h1>Mensagens</h1>
+    <div class="corpo-mensagem">
+      {{#if messages.length}}
+        <table class="message-table">
+          <thead>
+            <tr>
+              <th>Usuário</th>
+              <th>Email</th>
+              <th>Texto</th>
+              <th>Data</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each messages}}
+              <tr>
+                <td>{{this.user}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.text}}</td>
+                <td>{{formatDate this.postDate}}</td>
+                <td>
+                  {{#if (eq this.user ../user.user)}}
+                    <form
+                      method="POST"
+                      action="/mensagens/{{this._id}}/deletar"
+                      onsubmit="return confirm('Tem certeza que deseja deletar esta mensagem?');"
+                      class="form-delete"
+                    >
+                      <button class="botao-lixeira" title="Deletar mensagem">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M3 6h18v2H3zm2 3h14l-1.5 12.5a2 2 0 0 1-2 1.5H8a2 2 0 0 1-2-1.5L4.5 9zM10 11v8h2v-8h-2zm4 0v8h2v-8h-2z"
+                          />
+                        </svg>
+                      </button>
+                      <a
+                        href="/mensagens/editar/{{this._id}}"
+                        class="botao-editar"
+                        title="Editar mensagem"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M3 17.25V21h3.75l11.06-11.06-3.75-3.75L3 17.25zM21.41 6.34a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                          />
+                        </svg>
+                      </a>
+                    </form>
+                  {{else}}
+                    <!-- Botão curtir removido -->
+                  {{/if}}
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        <p>Nenhuma mensagem encontrada.</p>
+      {{/if}}
+      <button
+        class="botao"
+        onclick="window.location.href='/mensagens/novo'"
+      >Nova Mensagem</button>
+    </div>
+  </body>
+</html>
